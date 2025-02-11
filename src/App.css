@@ -1,50 +1,49 @@
-/* Global Body Styles */
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  background-color: #121212;
-  color: white;
-}
-
-/* Flex Layout for Main App */
-.app {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /* Header Styles */
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #1f1f1f;
-  position: sticky;
+  padding: 15px 30px;
+  background: #181818; /* Dark modern background */
+  position: fixed;
   top: 0;
-  z-index: 10;
-  width: 200%;
-  margin-bottom: 25px;
-  margin-left: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo */
+.logo h1 {
+  font-size: 22px;
+  color: #00aaff;
+  font-weight: bold;
+}
+
+/* Search Bar */
 .search-bar {
-  font-size: 18px;
-  color: #bbb;
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .search-input {
+  width: 100%;
+  max-width: 300px;
   padding: 10px;
-  border-radius: 5px;
-  background-color: #333;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  width: 250px;
+  border-radius: 6px;
+  background-color: #222;
+  border: 1px solid #444;
+  color: white;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
 }
 
 .search-input::placeholder {
@@ -52,35 +51,100 @@ body {
 }
 
 .search-input:focus {
+  border-color: #00aaff;
   outline: none;
-  border: 2px solid #00aaff;
+  transform: scale(1.03);
 }
 
+/* Buttons */
 .header-buttons {
   display: flex;
+  gap: 12px;
+}
+
+.sort-button,
+.add-new-button {
+  display: flex;
   align-items: center;
-}
-
-.sort-button, .add-new-button {
-  background-color: #333;
+  gap: 6px;
+  background-color: #252525;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  position: relative;
 }
 
-.sort-button:hover, .add-new-button:hover {
-  background-color: #444;
+.sort-button:hover,
+.add-new-button:hover {
+  background-color: #303030;
+}
+
+.sort-button::after,
+.add-new-button::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #00aaff;
+  transition: width 0.2s ease-in-out;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.sort-button:hover::after,
+.add-new-button:hover::after {
+  width: 100%;
 }
 
 .add-new-button {
-  background-color: #28a745;
+  background: linear-gradient(135deg, #28a745, #218838);
 }
 
 .add-new-button:hover {
-  background-color: #218838;
+  background: linear-gradient(135deg, #218838, #1e7e34);
+}
+
+/* Icons */
+.icon {
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .header-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .search-input {
+    width: 90%;
+  }
+
+  .sort-button,
+  .add-new-button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Project Container */
@@ -117,18 +181,40 @@ body {
   margin-top: 10px;
 }
 
-/* Project Card Styles */
-.project-card {
-  background-color: #1f1f1f;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-width: 300px;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Container for Projects */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 80px auto 20px;
+}
+
+/* Project Card */
+.project-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Header */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -138,78 +224,88 @@ body {
 .project-name {
   font-size: 20px;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .live-link {
+  display: flex;
+  align-items: center;
   color: #00aaff;
   text-decoration: none;
+  font-size: 14px;
+  gap: 5px;
+  transition: color 0.2s;
 }
 
 .live-link:hover {
-  text-decoration: underline;
+  color: #0088cc;
 }
 
+/* Project Description */
 .project-description {
-  color: #bbb;
-  margin: 10px 0;
+  color: #bdbdbd;
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
+/* Card Footer */
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  margin-top: 10px;
 }
 
 .last-updated {
-  font-size: 14px;
-  color: #777;
+  font-size: 12px;
+  color: #888;
 }
 
-.connect-repo-button {
-  background-color: #007bff;
+/* Edit Button */
+.edit-button {
+  background: #007bff;
   color: white;
-  padding: 5px 15px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease;
 }
 
-.connect-repo-button:hover {
-  background-color: #0056b3;
+.edit-button:hover {
+  background: #0056b3;
 }
 
-/* Media Queries for Responsiveness */
+.edit-icon {
+  font-size: 14px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header-buttons {
-    margin-top: 15px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .card-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .search-input {
-    width: 100%;
+  .projects-container {
+    grid-template-columns: 1fr;
+    padding: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .achievement-card {
+  .project-card {
     padding: 15px;
   }
 
-  .search-input {
-    font-size: 14px;
+  .edit-button {
+    font-size: 12px;
+    padding: 6px 10px;
   }
 }
+
 
 /* Add New Page Styles */
 .add-new-container {
