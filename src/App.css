@@ -1,0 +1,263 @@
+/* Global Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: white;
+}
+
+/* Flex Layout for Main App */
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 200%;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.search-bar {
+  font-size: 18px;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: 250px;
+}
+
+.search-input::placeholder {
+  color: #bbb;
+}
+
+.search-input:focus {
+  outline: none;
+  border: 2px solid #00aaff;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.sort-button, .add-new-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.sort-button:hover, .add-new-button:hover {
+  background-color: #444;
+}
+
+.add-new-button {
+  background-color: #28a745;
+}
+
+.add-new-button:hover {
+  background-color: #218838;
+}
+
+/* Project Container */
+.achievement-wall {
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  overflow-x: auto; /* Makes the container horizontally scrollable */
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.achievement-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  min-width: 300px; /* Ensures the card maintains a consistent width */
+}
+
+.achievement-card img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.card-body {
+  margin-top: 10px;
+}
+
+/* Project Card Styles */
+.project-card {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 300px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.live-link {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.live-link:hover {
+  text-decoration: underline;
+}
+
+.project-description {
+  color: #bbb;
+  margin: 10px 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.last-updated {
+  font-size: 14px;
+  color: #777;
+}
+
+.connect-repo-button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.connect-repo-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-buttons {
+    margin-top: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievement-card {
+    padding: 15px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+}
+
+/* Add New Page Styles */
+.add-new-container {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.add-new-container h1 {
+  color: #00aaff;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-field input[type="file"] {
+  padding: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
