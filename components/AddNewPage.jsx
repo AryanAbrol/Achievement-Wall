@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import Draggable from "react-draggable";
 import { ResizableBox } from "react-resizable";
 import { FaGithub, FaLink } from "react-icons/fa";
@@ -52,10 +53,9 @@ const AddNewPage = () => {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container" style={{marginTop: "72px"}}>
       {/* Sidebar Form */}
       <div className="sidebar">
-        <h2>🎯 Achievement Generator</h2>
         <div className="form-field">
           <label>Name:</label>
           <input

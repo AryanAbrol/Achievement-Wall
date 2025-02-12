@@ -442,3 +442,7 @@
 .achievement-widget a:hover {
   text-decoration: underline;
 }
+
+#any{
+cursor: pointer;
+}
