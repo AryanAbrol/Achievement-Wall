@@ -349,12 +349,27 @@
   outline: none;
 }
 
+.preview-img-container {
+  position: relative;
+  display: inline-block;
+}
+
 .preview-img {
   width: 100px;
   height: 100px;
-  object-fit: cover;
-  margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 50%;
+}
+
+.remove-img-btn {
+  position: absolute;
+  top: 5;
+  right: 5;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: orangered;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .submit-btn {
