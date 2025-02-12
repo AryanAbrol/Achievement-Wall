@@ -8,7 +8,7 @@ const ProjectCard = ({ project }) => {
       <div className="card-header">
         <h3 className="project-name">{project.name}</h3>
         <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="live-link">
-          Live <FaExternalLinkAlt />
+          View Your Wall<FaExternalLinkAlt />
         </a>
       </div>
 
